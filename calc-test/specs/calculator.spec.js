@@ -26,14 +26,14 @@ describe('Calculator 100% coverage', () => {
     expect(() => calculator(6, '?', 8)).toThrow();
   });
   test.each`
-    a      | op     | b      | expected
-    ${6}   | ${'*'} | ${8}   | ${48}
-    ${48}   | ${'/'} | ${8}   | ${6}
-    ${6}   | ${'+'} | ${8}   | ${14}
-    ${6}   | ${'-'} | ${8}   | ${-2}
-    ${6}   | ${'&'} | ${8}   | ${'error'}
-    ${'aa'}   | ${'+'} | ${8}   | ${'error'}
-    ${6}   | ${'+'} | ${'aa'}   | ${'error'}
+    a       | op     | b       | expected
+    ${6}    | ${'*'} | ${8}    | ${48}
+    ${48}   | ${'/'} | ${8}    | ${6}
+    ${6}    | ${'+'} | ${8}    | ${14}
+    ${6}    | ${'-'} | ${8}    | ${-2}
+    ${6}    | ${'&'} | ${8}    | ${'error'}
+    ${'aa'} | ${'+'} | ${8}    | ${'error'}
+    ${6}    | ${'+'} | ${'aa'} | ${'error'}
   `('$a $op $b = $expected', ({ a, op, b, expected }) => {
     if (expected === 'error') {
       expect(() => calculator(a, op, b)).toThrow();
